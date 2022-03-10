@@ -1,20 +1,19 @@
 
+
 export interface IResource {
-    readonly name: string;
-    readonly arn: string;
-    readonly resourceType: string;
-  }
+  readonly name: string;
+  readonly arn: string;
+  readonly stackName: string;
+}
   
 export class Resource implements IResource {
     public readonly arn: string;
     public readonly name: string;
-    public readonly resourceType: string;
-    public readonly resouces: Resource[];
+    public readonly stackName: string;
   
-    constructor(arn: string, name: string, resourceType: string){
+    constructor(name: string, arn: string, stackName: string) {
       this.arn = arn;
       this.name = name;
-      this.resourceType = resourceType;
-      this.resouces = []
+      this.stackName = stackName;
     }
   }
