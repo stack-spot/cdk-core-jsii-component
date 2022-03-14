@@ -1,7 +1,7 @@
 {
   "name": "@stackspot/cdk-core",
-  "version": "0.1.2",
-  "description": "Component to manage stack in SSM",
+  "version": "0.1.3",
+  "description": "Component to manage stack in SSM.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -26,6 +26,11 @@
   "devDependencies": {
     "@types/jest": "^26.0.10",
     "@types/node": "10.17.27",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "eslint": "^8.10.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
     "jest": "^26.4.2",
     "jsii": "^1.54.0",
     "jsii-pacmak": "^1.54.0",
@@ -50,6 +55,27 @@
         "packageId": "StackSpot.Env.CdkCore",
         "iconUrl": "https://www.nuget.org/profiles/stackspot/avatar"
       }
+    }
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    },
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/test"
+    ],
+    "testMatch": [
+      "**/*.test.ts"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
     }
   }
 }

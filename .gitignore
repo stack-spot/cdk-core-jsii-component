@@ -1,13 +1,16 @@
 *.js
-!jest.config.js
 *.d.ts
 node_modules
-dist
-coverage
 
 # CDK asset staging directory
 .cdk.staging
 cdk.out
+
+# jsii
+dist
+.jsii
 tsconfig.json
 tsconfig.tsbuildinfo
-.jsii
+
+# Jest
+coverage

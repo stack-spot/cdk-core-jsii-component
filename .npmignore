@@ -5,9 +5,20 @@
 .cdk.staging
 cdk.out
 
-
 # Exclude jsii outdir
 dist
 
 # Include .jsii
 !.jsii
+
+# GitHub Actions
+.github
+
+# Jest
+coverage
+
+# Project
+.editorconfig
+.eslintrc.json
+.gitattributes
+test
