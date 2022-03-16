@@ -1,4 +1,4 @@
-import { IStringParameter, StringParameter } from 'aws-cdk-lib/aws-ssm';
+import { StringParameter } from 'aws-cdk-lib/aws-ssm';
 import { Construct } from 'constructs';
 import { IResource } from './resource';
 
@@ -9,8 +9,8 @@ export class StackManager {
   /**
    * Save resources in SSM.
    */
-  public static saveResource(scope: Construct, resource: IResource): IStringParameter {
-    return new StringParameter(scope, 'saveSsmStack-'.concat(resource.stackName), {
+  public static saveResource(scope: Construct, resource: IResource): StringParameter {
+    return new StringParameter(scope, 'saveSsmResource-'.concat(resource.name), {
       parameterName: `/stackspot/${resource.stackName}/${resource.name}`,
       stringValue: resource.arn,
     });
