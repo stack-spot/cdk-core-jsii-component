@@ -1,4 +1,4 @@
-# cdk-core-component
+# CDK Core
 
 [![aws-cdk][badge-aws-cdk]][aws-cdk]
 [![jsii][badge-jsii]][jsii]
@@ -19,16 +19,15 @@ Below are all languages supported by the AWS CDK.
 Install the dependency:
 
 ```sh
-dotnet add package StackSpot.Env.CdkCore
+dotnet add package StackSpot.Cdk.Core
 ```
 
 Import the construct into your project, for example:
 
 ```csharp
 using Amazon.CDK;
-using Amazon.CDK.AWS.EC2;
 using Constructs;
-using StackSpot.Env.CdkCore;
+using StackSpot.Cdk.Core;
 
 namespace MyStack
 {
@@ -96,7 +95,7 @@ class MyStack extends Stack {
   }
 }
 
-module.exports = { MyStack }
+module.exports = { MyStack };
 ```
 
 ### Python
@@ -170,9 +169,59 @@ export class MyStack extends Stack {
 | static getResourceArn(scope, stackName, resourceName) | Get the ARN of the resource saved in SSM. |
 | static saveResource(scope, resource)                  | Save resources in SSM.                    |
 
+#### static getResourceArn(scope, stackName, resourceName)
+
+```typescript
+public static getResourceArn(scope: Construct, stackName: string, resourceName: string): string
+```
+
+_Parameters_
+
+- **scope** [Construct][aws-cdk-construct]
+- **stackName** string
+- **resourceName** string
+
+_Returns_
+
+- string
+
+Get the ARN of the resource saved in SSM.
+
+#### static saveResource(scope, resource)
+
+```typescript
+public static saveResource(scope: Construct, resource: IResource): StringParameter
+```
+
+_Parameters_
+
+- **scope** [Construct][aws-cdk-construct]
+- **resource** [IResource](#resource)
+
+_Returns_
+
+- [StringParameter][aws-cdk-ssm-string-parameter]
+
+Save resources in SSM.
+
 ## IAM Least privilege
 
-TODO
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:DeleteParameter",
+        "ssm:GetParameters",
+        "ssm:PutParameter"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
 
 ## Development
 
@@ -180,29 +229,31 @@ TODO
 
 - [EditorConfig][editorconfig] (Optional)
 - [Git][git]
-- [Node.js 16][nodejs]
+- [Node.js][nodejs] 17
 
 ### Setup
 
 ```sh
-cd cdk-core-component
+cd cdk-core-jsii-component
 npm install
 ```
 
 You are done! Happy coding!
 
 [aws-cdk]: https://aws.amazon.com/cdk
-[badge-aws-cdk]: https://img.shields.io/github/package-json/dependency-version/stack-spot/cdk-core-component/aws-cdk-lib
-[badge-jsii]: https://img.shields.io/github/package-json/dependency-version/stack-spot/cdk-core-component/dev/jsii
-[badge-license]: https://img.shields.io/github/license/stack-spot/cdk-core-component
+[aws-cdk-construct]: https://docs.aws.amazon.com/cdk/api/v2/docs/constructs.Construct.html
+[aws-cdk-ssm-string-parameter]: https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_ssm.StringParameter.html
+[badge-aws-cdk]: https://img.shields.io/github/package-json/dependency-version/stack-spot/cdk-core-jsii-component/aws-cdk-lib
+[badge-jsii]: https://img.shields.io/github/package-json/dependency-version/stack-spot/cdk-core-jsii-component/dev/jsii
+[badge-license]: https://img.shields.io/github/license/stack-spot/cdk-core-jsii-component
 [badge-npm-downloads]: https://img.shields.io/npm/dt/@stackspot/cdk-core?label=downloads%20%28npm%29
 [badge-npm-version]: https://img.shields.io/npm/v/@stackspot/cdk-core
-[badge-nuget-downloads]: https://img.shields.io/nuget/dt/StackSpot.Env.CdkCore?label=downloads%20%28NuGet%29
-[badge-nuget-version]: https://img.shields.io/nuget/vpre/StackSpot.Env.CdkCore
+[badge-nuget-downloads]: https://img.shields.io/nuget/dt/StackSpot.Cdk.Core?label=downloads%20%28NuGet%29
+[badge-nuget-version]: https://img.shields.io/nuget/vpre/StackSpot.Cdk.Core
 [editorconfig]: https://editorconfig.org/
 [git]: https://git-scm.com/downloads
 [jsii]: https://aws.github.io/jsii/
-[license]: https://github.com/stack-spot/cdk-core-component/blob/main/LICENSE
+[license]: https://github.com/stack-spot/cdk-core-jsii-component/blob/main/LICENSE
 [nodejs]: https://nodejs.org/en/download/
 [npm-package]: https://www.npmjs.com/package/@stackspot/cdk-core
-[nuget-package]: https://www.nuget.org/packages/StackSpot.Env.CdkCore
+[nuget-package]: https://www.nuget.org/packages/StackSpot.Cdk.Core

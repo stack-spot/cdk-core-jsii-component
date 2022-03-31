@@ -39,6 +39,10 @@ export class Resource {
 
   /**
    * Creates a new instance of type Resource.
+   *
+   * @param {string} name The name of the resource.
+   * @param {string} arn The ARN of the resource.
+   * @param {string} stackName The name of the resource's stack.
    */
   constructor(name: string, arn: string, stackName: string) {
     this.arn = arn;

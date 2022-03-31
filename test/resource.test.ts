@@ -5,8 +5,9 @@ describe('Resource', () => {
     const resource: IResource = new Resource(
       'test-name',
       'test-arn',
-      'test-stack-name',
+      'test-stack-name'
     );
+
     expect(resource.arn).toBe('test-arn');
   });
 
@@ -14,8 +15,9 @@ describe('Resource', () => {
     const resource: IResource = new Resource(
       'test-name',
       'test-arn',
-      'test-stack-name',
+      'test-stack-name'
     );
+
     expect(resource.name).toBe('test-name');
   });
 
@@ -23,8 +25,9 @@ describe('Resource', () => {
     const resource: IResource = new Resource(
       'test-name',
       'test-arn',
-      'test-stack-name',
+      'test-stack-name'
     );
+
     expect(resource.stackName).toBe('test-stack-name');
   });
 });

@@ -7,7 +7,7 @@ describe('Stack Manager', () => {
     const resource: IResource = new Resource(
       'test-name',
       'test-arn',
-      'test-stack-name',
+      'test-stack-name'
     );
 
     const app = new App();
@@ -26,14 +26,20 @@ describe('Stack Manager', () => {
     const resource: IResource = new Resource(
       'test-name',
       'test-arn',
-      'test-stack-name',
+      'test-stack-name'
     );
 
     const app = new App();
     const stack = new Stack(app, 'TestStack');
     StackManager.saveResource(stack, resource);
-    const ssmParameter = StackManager.getResourceArn(stack, 'test-stack-name', 'test-name');
+    const ssmParameter = StackManager.getResourceArn(
+      stack,
+      'test-stack-name',
+      'test-name'
+    );
 
-    expect(stack.resolve(ssmParameter).Ref).toBe('getSsmStackResourceteststacknameParameter');
+    expect(stack.resolve(ssmParameter).Ref).toBe(
+      'getSsmStackResourceteststacknameParameter'
+    );
   });
 });
