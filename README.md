@@ -243,7 +243,7 @@ You are done! Happy coding!
 [aws-cdk]: https://aws.amazon.com/cdk
 [aws-cdk-construct]: https://docs.aws.amazon.com/cdk/api/v2/docs/constructs.Construct.html
 [aws-cdk-ssm-string-parameter]: https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_ssm.StringParameter.html
-[badge-aws-cdk]: https://img.shields.io/github/package-json/dependency-version/stack-spot/cdk-core-jsii-component/aws-cdk-lib
+[badge-aws-cdk]: https://img.shields.io/github/package-json/dependency-version/stack-spot/cdk-core-jsii-component/dev/aws-cdk-lib
 [badge-jsii]: https://img.shields.io/github/package-json/dependency-version/stack-spot/cdk-core-jsii-component/dev/jsii
 [badge-license]: https://img.shields.io/github/license/stack-spot/cdk-core-jsii-component
 [badge-npm-downloads]: https://img.shields.io/npm/dt/@stackspot/cdk-core?label=downloads%20%28npm%29
